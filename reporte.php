@@ -13,10 +13,44 @@
 
 <body>
     <!--------------------------- Barra de navegacion ----------------------------->
-    <?php
-    declare(string_types=1);
-    require_once 'header.php';
-    ?>
+    <header>
+        <div class="left">
+            <div class="menu-container">
+                <div class="menu" id="menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="brand">
+                <img src="imagenes/logo 2.webp" alt="logo de la empreza" class="logo">
+                <span class="name">FinanzApp</span>
+            </div>
+        </div>
+        <div class="right">
+            <a href="iniciarSesion.php" class="icons-header"><img src="iconos/usuario.svg" alt="img-user"
+                    class="user"></a>
+        </div>
+    </header>
+    <div class="sidebar" id="sidebar">
+        <div class="cerrar" id="cerrar">✕</div>
+        <nav>
+            <ul>
+                <li><a href="registrar.php"><img src="iconos/registrar.svg"
+                            alt="registrar"><span>registrarse</span></a></li>
+                <li><a href="index.php" class="selected"><img src="iconos/casa.svg"
+                            alt="contacto"><span>Inicio</span></a></li>
+                <li><a href="contacto.php"><img src="iconos/contacto.svg" alt="contacto"><span>contacto</span></a>
+                </li>
+                <li><a href="reporte.php"><img src="iconos/reporte.svg" alt="reporte"><span>reporte</span></a>
+                </li>
+                <li><a href="nosotros.php"><img src="iconos/nosotros.svg" alt="nosotros"><span>nosotros</span></a>
+                </li>
+                <li><a href="consejos.php"><img src="iconos/preguntas.svg" alt="consejos"><span>consejos</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
     <!------------------------------------------------------------------------------>
     <main class="contenedor-reporte"> <!--contenedor principal-->
         <article> <!--recuadro al cual se le aplicara el css-->
