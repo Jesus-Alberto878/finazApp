@@ -494,3 +494,7 @@ footer nav:hover{
     border-radius: 5px;
     cursor: pointer;
 }
+.navInvisible{
+    position: absolute;
+    left: -9999px;
+}
