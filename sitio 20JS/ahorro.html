@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Configuración básica del documento-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorro | FinanzApp</title>
+
+    <!--Icono que aparece en la pestaña del navegador-->
+    <link rel="icon" href="imagenes/logo 2.webp">
+
+    <!--Hoja de estilos principal de la página de ahorro-->
+    <link rel="stylesheet" href="css/ahorro.css">
+
+    <!--Fuente externa usada en el diseño-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body><!-- Encabezado principal con menú, logo y acceso de usuario -->
+<header class="barraSuperior">
+    <!-- Botón para abrir o cerrar el menú lateral -->
+    <button class="botonMenu" id="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <!-- Logo y nombre de la aplicación, enlazando al inicio -->
+    <a href="index.html" class="marcaLogo">
+        <img src="imagenes/logo 2.webp" alt="Logo oficial de FinanzApp" class="imagenLogo">
+        <span class="texto">FinanzApp</span>
+    </a>
+    <!-- Icono de usuario que dirige al inicio de sesión -->
+    <nav class="navegacionUsuario">
+        <a href="iniciarSesion.html">
+            <img src="iconos/usuario.svg" alt="Icono de usuario" class="iconoUsuario">
+        </a>
+    </nav>
+</header>
+
+   <aside class="menuLateral">
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <img src="iconos/casa.svg" alt="icono para ir al inicio">
+                        <span>Inicio</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="registrar.html">
+                        <img src="iconos/registrar.svg" alt="icono para ir al formulario para registrarse">
+                        <span>registrarse</span>
+                    </a>
+                </li>
+
+            <!-- Enlace a la sección de reportes -->
+            <li>
+                <a href="reporte.html">
+                    <img src="iconos/reporte.svg" alt="Icono de reporte">
+                    <span>Reporte</span>
+                </a>
+            </li>
+
+            <!-- Enlace a la página de ahorro -->
+            <li>
+                <a href="ahorro.html">
+                    <img src="iconos/ahorro.svg" alt="Icono de ahorro">
+                    <span>Ahorro</span>
+                </a>
+            </li>
+
+            <!-- Enlace a la sección de educación financiera -->
+            <li>
+                <a href="educacionFinanciera.html">
+                    <img src="iconos/educacionFinanciera.svg" alt="Icono de educación financiera">
+                    <span>Educacion Financiera</span>
+                </a>
+            </li>
+
+            <!-- Enlace a la página de metas financieras -->
+            <li>
+                <a href="metas.html">
+                    <img src="iconos/metas.svg" alt="Icono de metas">
+                    <span>Metas</span>
+                </a>
+            </li>
+
+            <!-- Enlace a preguntas frecuentes -->
+            <li>
+                <a href="preguntasFrecuentes.html">
+                    <img src="iconos/preguntasFrecuentes.svg" alt="Icono de preguntas frecuentes">
+                    <span>Preguntas Frecuentes</span>
+                </a>
+            </li>
+
+            <!-- Enlace a la página de servicios -->
+            <li>
+                <a href="servicios.html">
+                    <img src="iconos/servicios.svg" alt="Icono de servicios">
+                    <span>Servicios</span>
+                </a>
+            </li>
+
+            </ul>
+        </nav>
+    </aside>
+
+<!--Título principal de la página-->
+<h2 class="tituloAhorro">Ahorro</h2>
+
+<!--Contenido principal con tarjetas informativas sobre ahorro-->
+<main class="contenidoAhorro">
+
+    <!--Tarjeta 1: evitar gastos innecesarios-->
+    <section class="tarjetaAhorro">
+        <h2>Evita gastos innecesarios</h2>
+
+        <p>
+            Realizar compras responsables y controlar los gastos diarios
+            permite mejorar la estabilidad financiera. Evitar adquirir
+            productos innecesarios ayuda a conservar dinero para metas
+            importantes y situaciones de emergencia.
+        </p>
+
+        <h3>Recomendaciones</h3>
+
+        <ul>
+            <li>Comparar precios antes de comprar.</li>
+            <li>Evitar compras impulsivas.</li>
+            <li>Priorizar necesidades sobre deseos.</li>
+            <li>Reducir gastos innecesarios.</li>
+        </ul>
+    </section>
+
+    <!--Tarjeta 2: importancia de crear un presupuesto-->
+    <section class="tarjetaAhorro">
+        <h2>Crea un presupuesto</h2>
+
+        <p>
+            Organizar los ingresos y egresos mensuales permite tener un
+            mejor control financiero. Un presupuesto ayuda a identificar
+            cuánto dinero se puede ahorrar y en qué áreas es posible
+            reducir gastos.
+        </p>
+
+        <h3>Beneficios</h3>
+
+        <ul>
+            <li>Mayor control del dinero.</li>
+            <li>Mejor organización financiera.</li>
+            <li>Reducción de deudas.</li>
+            <li>Facilidad para alcanzar metas.</li>
+        </ul>
+    </section>
+
+    <!--Tarjeta 3: hábito de ahorrar constantemente-->
+    <section class="tarjetaAhorro">
+        <h2>Guarda dinero constantemente</h2>
+
+        <p>
+            Destinar una parte fija de los ingresos al ahorro permite
+            construir estabilidad económica y prepararse para el futuro.
+            Ahorrar de manera constante ayuda a cumplir objetivos y enfrentar
+            situaciones inesperadas.
+        </p>
+
+        <h3>Consejos</h3>
+
+        <ul>
+            <li>Ahorrar una cantidad mensual fija.</li>
+            <li>Crear metas de ahorro.</li>
+            <li>Evitar retirar dinero innecesariamente.</li>
+            <li>Mantener disciplina financiera.</li>
+        </ul>
+    </section>
+
+    <!--Tarjeta 4: uso de metas financieras-->
+    <section class="tarjetaAhorro">
+        <h2>Utiliza metas financieras</h2>
+
+        <p>
+            Establecer metas financieras ayuda a mantener motivación y
+            disciplina en el ahorro. Definir objetivos claros permite
+            administrar mejor los ingresos y medir el progreso alcanzado.
+        </p>
+
+        <h3>Objetivos comunes</h3>
+
+        <ul>
+            <li>Comprar una computadora.</li>
+            <li>Ahorrar para estudios.</li>
+            <li>Planear un viaje.</li>
+            <li>Crear un fondo de emergencia.</li>
+        </ul>
+    </section>
+
+</main>
+<!----------------------- footer ------------------------>
+    <footer>
+        <main>
+            <section class="izquierda">
+                <h3>© 2026 FinanzApp</h3>
+                <p>Contacto</p>
+                <p>+52 444 000 0000</p>
+            </section>
+            <section class="derecha">
+                <h3>FinanzApp</h3>
+            <p>Controla tus gastos de forma inteligente.</p>
+            </section>
+        </main>
+    </footer>
+
+<!--Archivo JavaScript que controla la interacción de la página-->
+<script src="javaScript/ahorro.js"></script>
+
+</body>
+</html>

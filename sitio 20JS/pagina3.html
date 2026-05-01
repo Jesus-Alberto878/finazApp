@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título de la página -->
+    <title>Registro de gastos | FinanzApp</title>
+
+    <!-- Icono de la pestaña -->
+    <link rel="icon" href="imagenes/logo 2.webp">
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="css/pagina3.css">
+
+    <!-- Fuente -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!--======================== Header ===========================-->
+<header class="barraSuperior">
+
+    <!-- Botón menú -->
+    <button class="botonMenu" id="menu" aria-label="Abrir menú">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+    <!-- Logo -->
+    <a href="index.html" class="marcaLogo">
+
+        <img 
+            src="imagenes/logo 2.webp" 
+            alt="Logo oficial de FinanzApp"
+            class="imagenLogo"
+        >
+
+        <span class="texto">FinanzApp</span>
+
+    </a>
+
+    <!-- Usuario -->
+    <nav class="navegacionUsuario">
+
+        <a href="iniciarSesion.html">
+
+            <img 
+                src="iconos/usuario.svg"
+                alt="Icono de usuario"
+                class="iconoUsuario"
+            >
+
+        </a>
+
+    </nav>
+
+</header>
+
+<!--======================== Menú lateral ===========================-->
+<aside class="menuLateral">
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    <img src="iconos/casa.svg" alt="Icono de inicio">
+                    <span>Inicio</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="registrar.html">
+                    <img src="iconos/registrar.svg" alt="Icono de registro">
+                    <span>Registrarse</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="reporte.html">
+                    <img src="iconos/reporte.svg" alt="Icono de reporte">
+                    <span>Reporte</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="ahorro.html">
+                    <img src="iconos/ahorro.svg" alt="Icono de ahorro">
+                    <span>Ahorro</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="educacionFinanciera.html">
+                    <img src="iconos/educacionFinanciera.svg" alt="Icono de educación financiera">
+                    <span>Educación Financiera</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="metas.html">
+                    <img src="iconos/metas.svg" alt="Icono de metas">
+                    <span>Metas</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="preguntasFrecuentes.html">
+                    <img src="iconos/preguntasFrecuentes.svg" alt="Icono de preguntas frecuentes">
+                    <span>Preguntas Frecuentes</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="servicios.html">
+                    <img src="iconos/servicios.svg" alt="Icono de servicios">
+                    <span>Servicios</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</aside>
+
+<!--======================== Formulario ===========================-->
+<main>
+
+    <form class="formularioGastos">
+
+        <h2 class="tituloFormulario">
+            Agregar Gasto
+        </h2>
+
+        <!-- Categoría -->
+        <select id="categoria" name="categoria" required>
+
+            <option value="">
+                Selecciona el tipo
+            </option>
+
+            <option value="transporte">
+                Transporte
+            </option>
+
+            <option value="comida">
+                Comida
+            </option>
+
+            <option value="materiales">
+                Materiales
+            </option>
+
+            <option value="inscripcion">
+                Inscripción
+            </option>
+
+        </select>
+
+        <!-- Monto -->
+        <input
+            id="montoGasto"
+            name="montoGasto"
+            type="number"
+            min="1"
+            placeholder="Monto del gasto"
+            required
+        >
+
+        <!-- Botón -->
+        <button id="agregar" type="button">
+            Agregar
+        </button>
+
+        <!-- Mensaje dinámico -->
+        <p id="mensajeUsuario"></p>
+
+    </form>
+
+    <!--======================== Registro ===========================-->
+    <article class="contenedorRegistroGastos">
+
+        <h2>Gastos</h2>
+
+        <!-- Dinero restante -->
+        <p id="dineroRestante">
+            Dinero restante: $0
+        </p>
+
+        <!-- Total gastado -->
+        <p id="totalGastado">
+            Total gastado: $0
+        </p>
+
+        <!-- Barra -->
+        <progress
+            id="barraProgreso"
+            value="0"
+            max="100"
+        ></progress>
+
+        <!-- Mensaje vacío -->
+        <p id="mensajeVacio">
+            No hay gastos registrados.
+        </p>
+
+        <!-- Tabla -->
+        <section class="registroGastos">
+
+            <table class="tablaGastos">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Categoría
+                        </th>
+
+                        <th>
+                            Precio
+                        </th>
+
+                        <th>
+                            Acción
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="lista-gastos"></tbody>
+
+            </table>
+
+        </section>
+
+    </article>
+
+    <!--======================== Gráfica ===========================-->
+    <article class="contenedorGrafica">
+
+        <canvas id="graficaPastel"></canvas>
+
+    </article>
+
+</main>
+
+<!--======================== Modal ===========================-->
+<section id="modal" class="modal">
+
+    <article class="contenidoModal">
+
+        <p id="textoModal"></p>
+
+        <button id="cerrarModal">
+            Cerrar
+        </button>
+
+    </article>
+
+</section>
+
+<!--======================== Footer ===========================-->
+<footer>
+
+    <main>
+
+        <section class="izquierda">
+
+            <h3>
+                © 2026 FinanzApp
+            </h3>
+
+            <p>Contacto</p>
+
+            <p>
+                +52 444 000 0000
+            </p>
+
+        </section>
+
+        <section class="derecha">
+
+            <h3>FinanzApp</h3>
+
+            <p>
+                Controla tus gastos de forma inteligente.
+            </p>
+
+        </section>
+
+    </main>
+
+</footer>
+
+<!--======================== Scripts ===========================-->
+
+<!-- Librería Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- JavaScript -->
+<script src="javaScript/pagina2.js"></script>
+
+</body>
+</html>
