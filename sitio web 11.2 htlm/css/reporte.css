@@ -1,0 +1,362 @@
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #8FB3E2;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes entradaSuave {
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+    --colorTextoSeleccionado: #355CC0;
+    --colorFondo: white;
+    --colorTituloTexto: #053D4E;
+    --colorTexto: #32363B;
+    --colorMenu: #707780;
+
+    --colorBoton: #211f99;
+    --colorBotonHover: rgb(211, 211, 223);
+
+    --colorBorde: #E6E9ED;
+}
+
+/* =========================
+   BARRA SUPERIOR
+========================= */
+
+.barraSuperior{
+    width: 100%;
+    height: 70px;
+    padding: 0 25px;
+    background-color: var(--colorFondo);
+    border-bottom: 1px solid var(--colorBorde);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* =========================
+   MENU BOTON
+========================= */
+
+.botonMenu{
+    width: 28px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.botonMenu span{
+    width: 100%;
+    height: 3px;
+    background-color: var(--colorMenu);
+    border-radius: 10px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.marcaLogo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.imagenLogo{
+    width: 50px;
+}
+
+.texto{
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--colorTexto);
+}
+
+.iconoUsuario{
+    width: 35px;
+}
+
+/* =========================
+   MENU LATERAL
+========================= */
+
+.menuLateral{
+    position: fixed;
+    top: 70px;
+    left: -500px;
+    width: 350px;
+    height: 100%;
+    background-color: var(--colorFondo);
+    padding: 25px;
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+.menuLateral.active{
+    left: 0;
+}
+
+.menuLateral img{
+    height: 40px;
+}
+
+.menuLateral a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--colorTexto);
+    width: 100%;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.menuLateral a:hover{
+    background-color: var(--colorBotonHover);
+}
+
+.menuLateral li{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+/* =========================
+   CONTENIDO PRINCIPAL
+========================= */
+
+.reporte{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px 40px;
+    animation: entradaSuave 0.8s ease;
+    transition: margin-left 0.3s ease;
+}
+
+/* cuando menú activo mueve contenido */
+.menu-activo .reporte{
+    margin-left: 350px;
+}
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.containerReporte{
+    width: 100%;
+    max-width: 520px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 22px;
+    padding: 40px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+/* decoraciones */
+.containerReporte::before,
+.containerReporte::after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.containerReporte::before{
+    width: 180px;
+    height: 180px;
+    background: rgba(53,92,192,0.12);
+    top: -70px;
+    right: -70px;
+}
+
+.containerReporte::after{
+    width: 160px;
+    height: 160px;
+    background: rgba(33,31,153,0.08);
+    bottom: -70px;
+    left: -70px;
+}
+
+/* =========================
+   TITULO
+========================= */
+
+.containerReporte h2{
+    font-size: 32px;
+    color: var(--colorTituloTexto);
+    margin-bottom: 25px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.containerReporte form{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.containerReporte label{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--colorTexto);
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.containerReporte input,
+.containerReporte textarea{
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 2px solid transparent;
+    background-color: #f4f7fb;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s ease;
+    color: var(--colorTexto);
+}
+
+.containerReporte textarea{
+    min-height: 120px;
+    resize: none;
+}
+
+.containerReporte input:focus,
+.containerReporte textarea:focus{
+    border-color: var(--colorTextoSeleccionado);
+    background: white;
+}
+
+/* =========================
+   BOTON
+========================= */
+
+#btnEnviar{
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, var(--colorBoton), #355CC0);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#btnEnviar:hover{
+    transform: translateY(-3px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px){
+
+    .menuLateral{
+        width: 280px;
+    }
+
+    .menu-activo .reporte{
+        margin-left: 280px;
+    }
+
+    .containerReporte{
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px){
+
+    .reporte{
+        padding: 100px 15px 30px;
+    }
+
+    .containerReporte{
+        padding: 25px;
+    }
+}
+/*======================== Footer ===========================*/
+footer{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:var(--colorFondo);
+}
+footer main{
+    height: 50px;
+    width: 80%;
+    display: flex;
+    gap: 150px;
+    padding: 5px;
+}
+.izquierda{
+    flex: 1;
+}
+
+.derecha{
+    flex: 1;
+}
+.izquierda h3{
+    font-size: 13px;
+}
+.izquierda p{
+    font-size: 10px;
+}
+.derecha h3{
+    font-size: 13px;
+    text-align: center;
+}
+.derecha p{
+    font-size: 10px;
+    text-align: center;
+}

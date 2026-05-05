@@ -1,0 +1,320 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --colorTextoSeleccionado: #355CC0;
+    --fondoSeleccionado: #EBF0FF;
+    --colorFondo: white;
+    --colorTituloTexto: #053D4E;
+    --colorTexto: #32363B;
+    --colorIcono: #32363B;
+    --colorIconoMenu: #707780;
+    --colorMenu: #707780;
+
+    --fondoHover: #F7F9FA;
+
+    --colorBorde: #E6E9ED;
+
+    --sombraGeneral: 0px 4px 10px rgba(0,0,0,0.3);
+
+    --colorBoton: #211f99;
+    --colorBotonHover: rgb(97,89,221);
+}
+
+html,
+body{
+    overflow-x: hidden;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #8FB3E2;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/*======================== Animación ===========================*/
+@keyframes entradaSuave{
+
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/*======================== Barra superior ===========================*/
+.barraSuperior{
+    width: 100%;
+    height: 70px;
+    padding: 0 25px;
+    background-color: var(--colorFondo);
+    border-bottom: 1px solid var(--colorBorde);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.botonMenu{
+    width: 28px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.botonMenu span{
+    width: 100%;
+    height: 3px;
+    background-color: var(--colorMenu);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.marcaLogo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.imagenLogo{
+    width: 50px;
+}
+
+.texto{
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--colorTexto);
+}
+
+.iconoUsuario{
+    width: 35px;
+}
+
+/*======================== Menú lateral ===========================*/
+.menuLateral{
+    position: fixed;
+    top: 70px;
+    left: -500px;
+    width: 300px;
+    height: 100%;
+    background-color: var(--colorFondo);
+    padding: 25px;
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+.active{
+    left: 0;
+}
+
+.menuLateral nav{
+    padding: 5px;
+}
+
+.menuLateral ul{
+    list-style: none;
+}
+
+.menuLateral li{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.menuLateral a{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--colorTexto);
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+}
+
+.menuLateral a:hover{
+    background-color: var(--colorBotonHover);
+    color: white;
+}
+
+.menuLateral img{
+    width: 35px;
+}
+
+/*======================== Formulario ===========================*/
+.formularioGastos{
+    width: 90%;
+    max-width: 400px;
+    margin: 120px auto 30px auto;
+    padding: 25px;
+    background-color: var(--colorFondo);
+    border-radius: 15px;
+    box-shadow: var(--sombraGeneral);
+    text-align: center;
+    animation: entradaSuave 0.8s ease-out;
+}
+
+.tituloFormulario{
+    font-size: 24px;
+    color: var(--colorTituloTexto);
+    margin-bottom: 20px;
+}
+
+.formularioGastos select,
+.formularioGastos input{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--colorBorde);
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    color: var(--colorTexto);
+}
+
+.formularioGastos button{
+    width: 100%;
+    padding: 12px;
+    background-color: var(--colorBoton);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.formularioGastos button:hover{
+    background-color: var(--colorBotonHover);
+    color: black;
+}
+
+/*======================== Registro ===========================*/
+.contenedorRegistroGastos{
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--colorFondo);
+    border-radius: 15px;
+    box-shadow: var(--sombraGeneral);
+    animation: entradaSuave 0.8s ease-out;
+}
+
+.contenedorRegistroGastos h2{
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--colorTituloTexto);
+}
+
+.registroGastos{
+    overflow-x: auto;
+}
+
+/*======================== Tabla ===========================*/
+.tablaGastos{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tablaGastos thead{
+    background-color: var(--fondoSeleccionado);
+}
+
+.tablaGastos thead tr{
+    color: var(--colorTextoSeleccionado);
+}
+
+.tablaGastos th,
+.tablaGastos td{
+    padding: 12px;
+    border-bottom: 1px solid var(--colorBorde);
+    text-align: center;
+    color: var(--colorTexto);
+}
+
+.tablaGastos tr:hover{
+    background-color: var(--fondoHover);
+}
+
+/*======================== Gráfica ===========================*/
+.contenedorGrafica{
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto 40px auto;
+    padding: 20px;
+    background-color: var(--colorFondo);
+    border-radius: 15px;
+    box-shadow: var(--sombraGeneral);
+    animation: entradaSuave 0.8s ease-out;
+}
+
+/*======================== Footer ===========================*/
+footer{
+    margin-top: auto;
+    background-color: var(--colorFondo);
+    padding: 20px;
+}
+
+footer main{
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.izquierda,
+.derecha{
+    flex: 1;
+}
+
+.izquierda h3,
+.derecha h3{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.izquierda p,
+.derecha p{
+    font-size: 13px;
+}
+
+.derecha{
+    text-align: center;
+}
+
+/*======================== Responsive ===========================*/
+@media(max-width:768px){
+
+    .menuLateral{
+        width: 250px;
+    }
+
+    footer main{
+        flex-direction: column;
+        text-align: center;
+    }
+
+}

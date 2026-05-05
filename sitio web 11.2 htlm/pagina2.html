@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- Configuración básica -->
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <!-- Título -->
+    <title>
+        Registrar presupuesto | FinanzApp
+    </title>
+
+    <!-- Icono -->
+    <link
+        rel="icon"
+        href="imagenes/logo 2.webp"
+    >
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="css/pagina2.css"
+    >
+
+    <!-- Fuente -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+<body>
+
+<!--======================== HEADER ===========================-->
+
+<header class="barraSuperior">
+
+    <!-- Botón menú -->
+    <button
+        class="botonMenu"
+        id="menu"
+        aria-label="Abrir menú"
+    >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+    <!-- Logo -->
+    <a
+        href="index.html"
+        class="marcaLogo"
+    >
+
+        <img
+            src="imagenes/logo 2.webp"
+            alt="Logo oficial de FinanzApp"
+            class="imagenLogo"
+        >
+
+        <span class="texto">
+            FinanzApp
+        </span>
+
+    </a>
+
+    <!-- Usuario -->
+    <nav class="navegacionUsuario">
+
+        <a href="iniciarSesion.html">
+
+            <img
+                src="iconos/usuario.svg"
+                alt="Icono de usuario"
+                class="iconoUsuario"
+            >
+
+        </a>
+
+    </nav>
+
+</header>
+
+<!--======================== MENU ===========================-->
+
+<aside class="menuLateral">
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    <img src="iconos/casa.svg" alt="Inicio">
+                    <span>Inicio</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="registrar.html">
+                    <img src="iconos/registrar.svg" alt="Registro">
+                    <span>Registrarse</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="reporte.html">
+                    <img src="iconos/reporte.svg" alt="Reporte">
+                    <span>Reporte</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="ahorro.html">
+                    <img src="iconos/ahorro.svg" alt="Ahorro">
+                    <span>Ahorro</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="educacionFinanciera.html">
+                    <img
+                        src="iconos/educacionFinanciera.svg"
+                        alt="Educación financiera"
+                    >
+                    <span>
+                        Educación Financiera
+                    </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="metas.html">
+                    <img src="iconos/metas.svg" alt="Metas">
+                    <span>Metas</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="preguntasFrecuentes.html">
+                    <img
+                        src="iconos/preguntasFrecuentes.svg"
+                        alt="Preguntas frecuentes"
+                    >
+                    <span>
+                        Preguntas Frecuentes
+                    </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="servicios.html">
+                    <img src="iconos/servicios.svg" alt="Servicios">
+                    <span>Servicios</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</aside>
+
+<!--======================== MAIN ===========================-->
+
+<main class="pagina2">
+
+    <!-- Título -->
+    <h2 class="texto">
+        Registrar ingreso
+    </h2>
+
+    <div class="linea"></div>
+
+    <!-- Formulario -->
+    <form>
+
+        <label for="ingresoInicial">
+            Monto del ingreso
+        </label>
+
+        <input
+            type="number"
+            id="ingresoInicial"
+            name="ingresoInicial"
+            placeholder="Monto del ingreso"
+            min="1"
+            required
+        >
+
+        <button
+            id="btnSiguiente"
+            type="submit"
+        >
+
+            Siguiente
+
+        </button>
+
+    </form>
+
+    <!-- Información -->
+    <section class="informacion">
+
+        <h2>
+            ¿Cómo funciona esta página?
+        </h2>
+
+        <p id="textoInformacion"></p>
+
+    </section>
+
+</main>
+
+<!--======================== FOOTER ===========================-->
+
+<footer>
+
+    <main>
+
+        <section class="izquierda">
+
+            <h3>
+                © 2026 FinanzApp
+            </h3>
+
+            <p>Contacto</p>
+
+            <p>
+                +52 444 000 0000
+            </p>
+
+        </section>
+
+        <section class="derecha">
+
+            <h3>
+                FinanzApp
+            </h3>
+
+            <p>
+                Controla tus gastos
+                de forma inteligente.
+            </p>
+
+        </section>
+
+    </main>
+
+</footer>
+
+<!--======================== SCRIPT ===========================-->
+
+<script src="javaScript/pagina2.js"></script>
+
+</body>
+</html>
