@@ -1,0 +1,585 @@
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #8FB3E2;
+    font-family: 'Inter', sans-serif;
+     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+html, body {
+    overflow-x: hidden;
+}
+@keyframes entrada-suave {
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes entrada-suave {
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/*variables*/
+:root{
+    --background-color: white;
+    --text-titlr-color: #053D4E;
+    --text-color: #32363B;
+    --icon-color: #32363B;
+    --icon-menu-color: #707780;
+    --menu-color: #707780;
+
+    --text-selected-color: #355CC0;
+    --background-select: #EBF0FF;
+    --background-hover: #F7F9FA;
+
+    --border-color: #E6E9ED;
+
+    --sombra: 0px 4px 10px rgba(0,0,0,0.3); /* sombra general */
+
+    --color-boton: #211f99; /* color base de los botones */
+    --color-boton-hover: rgb(97, 89, 221); /* color cuando pasas el mouse */
+}
+/* variables */
+:root{
+    --background-color: white;
+    --text-titlr-color: #053D4E;
+    --text-color: #32363B;
+    --icon-color: #32363B;
+    --icon-menu-color: #707780;
+    --menu-color: #707780;
+
+    --text-selected-color: #355CC0;
+    --background-select: #EBF0FF;
+    --background-hover: #F7F9FA;
+
+    --border-color: #E6E9ED;
+}
+
+/* ===================== Barra de navegacion ===================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+header{
+    z-index: 200;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 32px 7px 20px; /* 0.45rem 2rem 0.45rem 1.27rem */
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    background-color: var(--background-color);
+    top: 0;
+    left: 0;
+    animation: entrada-suave 0.6s ease-out;
+}
+
+.left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px; /* 1.4rem */
+}
+
+.menu-container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu{
+    width: 24px; /* 1.5rem */
+    height: 37%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu div{
+    width: 100%;
+    height: 2px; /* 0.15rem */
+    background-color: var(--menu-color);
+    transition: all 0.3s ease;
+}
+
+/* animación hamburguesa */
+.menu.active div:first-child{
+    transform: rotate(-45deg) translate(-4px, 6px);
+}
+
+.menu.active div:nth-child(2){
+    opacity: 0;
+}
+
+.menu.active div:last-child{
+    transform: rotate(45deg) translate(-4px, -6px);
+}
+
+/* BRAND */
+.brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* 0.6rem */
+}
+
+.brand .logo{
+    width: 50px; /* 1.7rem */
+}
+
+.brand .name{
+    font-size: 24px; /* 1.5rem */
+    font-weight: 900;
+    color: var(--text-titlr-color);
+}
+
+/* RIGHT */
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 26px; /* 1.6rem */
+}
+
+.right a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px; /* 0.5rem */
+    transition: background-color 0.2s ease;
+}
+
+.right a:hover{
+    background-color: var(--background-hover);
+}
+
+.right img{
+    width: 24px; /* 1.5rem */
+    margin: 8px; /* 0.5rem */
+}
+
+.right .user{
+    width: 34px; /* 2.1rem */
+    border-radius: 50%;
+}
+
+/* SIDEBAR */
+.sidebar{
+    margin-top: 64px; /* 4rem */
+    width: 64px; /* 4rem */
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 18px 0; /* 1.1rem */
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+    background-color: var(--background-color);
+    transition: width 0.5s ease;
+    animation: entrada-suave 0.8s ease-out;
+}
+
+.sidebar.active{
+    width: 300px; /* 18.75rem */
+}
+
+.sidebar a{
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 14px; /* 0.9rem */
+    padding: 14px 11px; /* 0.9rem 0.7rem */
+    text-decoration: none;
+    margin: 0 8px; /* 0.5rem */
+    border-radius: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--text-color);
+}
+
+.sidebar a:hover{
+    background-color: var(--background-hover);
+}
+
+.sidebar .selected{
+    color: var(--text-selected-color);
+    background-color: var(--background-select);
+}
+
+.sidebar img{
+    width: 26px; /* 1.6rem */
+}
+/* BOTON CERRAR */
+.cerrar{
+    display: none;
+    font-size: 25px;
+    padding: 15px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+/* ===================== CELULAR ===================== */
+@media (min-width: 768px){
+    /* QUITA EL ESPACIO DEL SIDEBAR */
+    #frase,
+    .contenedor-index,
+    .text-2,
+    .linea,
+    .formulario-ingresos,
+    h1,
+    .container-nuevo-gasto,
+    .container-ingreso-total,
+    .container-registro-gastos,
+    .grafica-container,
+    footer,
+    .contenedor-nosotros,
+    .contenedor-reporte,
+    .contenedor-contacto,
+    .contenedor-acceder,
+    .contenedor-iniciarSesion,
+    .container-consejos {
+        
+        margin-left: 64px;
+    }
+}
+@media (max-width: 768px){
+    .container-registro-gastos h2{
+        margin-right: 64px;
+    }
+    .registro-gastos{
+        margin-right: 64px;
+    }
+
+    /* OCULTA SIDEBAR */
+    .sidebar{
+        width: 0;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin-top: 0;
+        overflow: hidden;
+        background-color: white;
+        transition: all 0.4s ease;
+    }
+
+    /* CUANDO SE ABRE */
+    .sidebar.active{
+        width: 250px;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    }
+
+    /* MUESTRA LA TACHITA */
+    .cerrar{
+        display: block;
+    }
+
+    /* EVITA QUE SE AMONTONE */
+    header{
+        padding: 10px 15px;
+    }
+}
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 500px){
+    .nuevo-gasto form input{
+      width: auto;
+    }
+    .container-nuevo-gasto .nuevo-gasto form{
+        flex-direction: column;
+    }
+    .nuevo-gasto{
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .nuevo-gasto input{
+    width: 229px;
+    }
+    .agregar{
+        padding: 5px;
+    }
+    .container-ingreso-total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .container-ingreso-total .ingreso-total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .registro{
+        margin-top: 100px;
+    }
+    .table-container th,
+    .table-container td {
+        padding: 8px;
+        font-size: 12px;
+    }
+    .grafica-container {
+    width: 400px;
+    }
+}
+@media(min-width: 600px){
+    .graficas2{
+        display: none;
+    }
+}
+/*========================= footer ================================*/
+footer{
+    margin-top: auto;
+    background-color: white; /*color del fondo asignado*/
+    height: 50px; /*es la altura que le asignamos a el footer*/
+    display: flex; /*activa el flex*/
+    justify-content: center; /*lo centa horizontalmente*/
+    align-items: center; /*centra horizontalmente*/
+
+}
+footer nav {
+    background-color: #211f99; /*le asignamos el color de fondo del boton o del <a>*/
+    width: 125px; /*es el anchor que le asignamos a el boton*/
+    height: 24px; /*es la altura que le asignamos al boton*/
+    display: flex; /*activa el flex*/
+    justify-content: center; /*centra horizontalmente*/
+    align-items: center; /*centra verticalmente*/
+    border-radius: 10px; /*redondea las esquinas*/
+    cursor: pointer;/*cuando el cursor pasa por arriba del boton cambia a una mano*/
+    transition: background-color 0.3s, transform 0.3s, color 0.3s; /*hace el efecto de suabisar el boton al sobre salir*/
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    /* box-shadow → propiedad que agrega una sombra a un elemento (como botones, cajas, imágenes) */
+    /* 0px → desplazamiento horizontal de la sombra (no se mueve a la izquierda ni derecha) */
+    /* 4px → desplazamiento vertical de la sombra (la sombra baja 4 píxeles) */
+    /* 10px → nivel de desenfoque de la sombra (qué tan difuminada se ve) */
+    /* rgba(0,0,0,0.3) → 
+    color de la sombra*/
+}
+footer nav a{
+    text-decoration: none; /*quita el subrayado*/
+    color: white; /*color que le asignamos al texto*/
+    font-family: Arial, Helvetica, sans-serif; /*es el tipo de texto que le asignamos*/
+}
+footer nav:hover{
+    background-color: rgb(97, 89, 221); /*al color qe se cambia al pasar por arriba*/
+    cursor: pointer; /*el cursor se comvierte al pasar por arriba de la opcion*/
+    transform: scale(1.1); /*agranda el boton*/
+    color: white; /*color del texto al que se cambia al pasar por la opcion*/
+}
+/*=================== segunda pagina de el sitio web ======================*/
+h1{
+    display: flex; /*activa el flexbox*/
+    justify-content: center; /*centra horizontalmente*/
+    margin-top: 84px;
+}
+.linea{
+    display: flex;
+    justify-content: center;
+}
+.linea div{
+    border: 1px var(--color-boton) solid; /*hace una linea para que se vea elegante*/
+    width: 80%;
+}
+.container-nuevo-gasto{
+    margin-top: 15px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nuevo-gasto h3{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nuevo-gasto{
+    background-color: var(--color-fondo-barra); /*definimos el color de fondo*/
+    width: 500px;
+}
+.nuevo-gasto form{
+    display: flex; /*activa el flexbox*/
+    justify-content: center;
+    padding: 10px; /*deja un espacio a los lados de los input*/
+    gap: 10px;/*deja un espaciado entre los input*/
+}
+.nuevo-gasto form input{
+    padding: 8px;
+    font-size: 13px;
+    border-radius: 4px;
+    border: none;
+}
+.nuevo-gasto form select{
+    padding: 8px;
+    font-size: 13px;
+    border-radius: 4px;
+    border: none;
+}
+.nuevo-gasto form select option{
+    border: none;
+    
+}
+.agregar{
+    background-color: var(--color-boton); /*color de fondo que le asignamos*/
+    border-radius: 4px; /*redondea las esquinas*/
+    border: none; /*quita el borde*/
+    color: white; /*es el color que le asignamos al texto*/
+    width: 250px;
+    transition: background-color 0.3s, transform 0.3s, color 0.3s; /*hace el efecto de suabisar el boton al sobre salir*/
+}
+.agregar:hover{
+    background-color: rgb(97, 89, 221); /*al color qe se cambia al pasar por arriba*/
+    cursor: pointer; /*el cursor se comvierte al pasar por arriba de la opcion*/
+    transform: scale(1.1); /*agranda el boton*/
+    color: white; /*color del texto al que se cambia al pasar por la opcion*/
+}
+.ingreso-total{
+    background-color: black; /*color de fondo*/
+    color: white;
+    margin-top: 20px;
+    height: 100px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 20px;
+}
+.container-ingreso-total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ===== CONTENEDOR GENERAL ===== */
+.container-registro-gastos {
+    width: 95%;
+    max-width: 900px;
+    margin: 30px auto;
+    font-family: Arial, sans-serif;
+}
+
+/* TITULO */
+.container-registro-gastos h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+}
+.registro-gastos{
+    margin-left: 10px;
+}
+
+/* ===== TABLA ===== */
+.table-container {
+    margin-left: 50px;
+    width: 90%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden; /* para que respete bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ===== CABECERA ===== */
+.table-container thead {
+    background: linear-gradient(135deg, #69c2dd, #4190af);
+    color: black;
+}
+
+.table-container th {
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ===== FILAS ===== */
+.table-container td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* EFECTO HOVER (cuando pasas el mouse) */
+.table-container tbody tr:hover {
+    background-color: #f5f5f5;
+    transition: 0.3s;
+}
+
+/* FILAS INTERCALADAS */
+.table-container tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* ===== BOTON ELIMINAR ===== */
+.table-container button {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, color 0.3s; /*hace el efecto de suabisar el boton al sobre salir*/
+}
+
+/* HOVER BOTON */
+.table-container button:hover {
+    background-color: #b71c1c; /*al color qe se cambia al pasar por arriba*/
+    cursor: pointer; /*el cursor se comvierte al pasar por arriba de la opcion*/
+    transform: scale(1.1); /*agranda el boton*/
+    color: white; /*color del texto al que se cambia al pasar por la opcion*/
+}
+.grafica-container {
+    margin-left: 64px;
+    width: 400px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#grafica-pastel{
+    padding: 64px 0;
+}
+/*===================== Modal de confirmacion ========================*/
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 15000; /* Asegura que el modal esté por encima de otros elementos */
+}
+
+.modal-contenido {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.modal-contenido button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
