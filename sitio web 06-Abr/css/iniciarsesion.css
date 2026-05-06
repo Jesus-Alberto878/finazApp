@@ -1,0 +1,401 @@
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #8FB3E2;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+@keyframes entradaSuave {
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --colorTextoSeleccionado: #355CC0;
+    --fondoSeleccionado: #EBF0FF;
+    --colorFondo: white;
+    --colorTituloTexto: #053D4E;
+    --colorTexto: #32363B;
+    --colorIcono: #32363B;
+    --colorIconoMenu: #707780;
+    --colorMenu: #707780;
+
+    --fondoHover: #F7F9FA;
+
+    --colorBorde: #E6E9ED;
+
+    --sombraGeneral: 0px 4px 10px rgba(0,0,0,0.3);
+
+    --colorBoton: #211f99;
+    --colorBotonHover: rgb(211, 211, 223);
+}
+
+.barraSuperior{
+    width: 100%;
+    height: 70px;
+    padding: 0 25px;
+    background-color: var(--colorFondo);
+    border-bottom: 1px solid var(--colorBorde);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.botonMenu{
+    width: 28px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.botonMenu span{
+    width: 100%;
+    height: 3px;
+    background-color: var(--colorMenu);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.marcaLogo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.imagenLogo{
+    width: 50px;
+}
+
+.texto{
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--colorTexto);
+}
+
+.iconoUsuario{
+    width: 35px;
+}
+
+.menuLateral{
+    position: fixed;
+    top: 70px; /* debajo de la barra */
+    left: -500px; /* oculto fuera de pantalla */
+    width: 350px;
+    height: 100%;
+    background-color: var(--colorFondo);
+    padding: 25px;
+    transition: left 0.3s ease; /* animación */
+}
+.active{
+    left: 0;
+}
+.menuLateral img{
+    height: 40px;
+}
+.menuLateral a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--colorTexto);
+    width: 350px;
+    gap: 15px;
+    transition: background-color 0.3s ease;
+}
+.menuLateral a:hover{
+    background-color: var(--colorBotonHover);
+    border-radius: 5px;
+}
+.menuLateral li{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.menuLateral nav{
+    padding: 5px;
+}
+
+/* =========================
+   CONTENIDO PRINCIPAL
+========================= */
+
+.formularioLogin{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 120px;
+    animation: entradaSuave 0.8s ease;
+}
+
+/* =========================
+   TARJETA LOGIN
+========================= */
+
+.tarjetaLogin{
+    width: 100%;
+    max-width: 450px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+/* =========================
+   TITULOS
+========================= */
+
+.tarjetaLogin h2{
+    font-size: 34px;
+    color: var(--colorTituloTexto);
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.tarjetaLogin p{
+    color: #5f6b75;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.formularioDatos{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+    z-index: 1;
+}
+
+.formularioDatos label{
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--colorTexto);
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.formularioDatos input{
+    width: 100%;
+    padding: 15px 18px;
+    border-radius: 14px;
+    border: 2px solid transparent;
+    background-color: #f4f7fb;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s ease;
+    color: var(--colorTexto);
+}
+
+.formularioDatos input::placeholder{
+    color: #97a0aa;
+}
+
+.formularioDatos input:focus{
+    border-color: var(--colorTextoSeleccionado);
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(53,92,192,0.15);
+}
+
+/* =========================
+   BOTON
+========================= */
+
+.botonIngresar{
+    width: 100%;
+    padding: 16px;
+    border-radius: 14px;
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(
+        135deg,
+        var(--colorBoton),
+        #355CC0
+    );
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(33,31,153,0.25);
+}
+
+.botonIngresar:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(33,31,153,0.35);
+}
+
+.botonIngresar:active{
+    transform: scale(0.98);
+}
+
+/* =========================
+   EFECTO EN MENU
+========================= */
+
+.menuLateral{
+    z-index: 999;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   LINKS DEL MENU
+========================= */
+
+.menuLateral a{
+    padding: 12px;
+    border-radius: 14px;
+    font-weight: 500;
+}
+
+.menuLateral a span{
+    transition: 0.3s ease;
+}
+
+.menuLateral a:hover span{
+    color: var(--colorTextoSeleccionado);
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 768px){
+
+    .barraSuperior{
+        padding: 0 18px;
+    }
+
+    .texto{
+        font-size: 20px;
+    }
+
+    .imagenLogo{
+        width: 42px;
+    }
+
+    .menuLateral{
+        width: 280px;
+        padding: 20px;
+    }
+
+    .menuLateral a{
+        width: 100%;
+    }
+
+    .tarjetaLogin{
+        padding: 30px 25px;
+        border-radius: 20px;
+    }
+
+    .tarjetaLogin h2{
+        font-size: 28px;
+    }
+}
+
+@media(max-width: 480px){
+
+    .formularioLogin{
+        padding: 100px 15px 30px;
+    }
+
+    .tarjetaLogin{
+        padding: 25px 20px;
+    }
+
+    .tarjetaLogin h2{
+        font-size: 24px;
+    }
+
+    .formularioDatos input{
+        padding: 14px;
+    }
+
+    .botonIngresar{
+        padding: 14px;
+    }
+}
+/*======================== Footer ===========================*/
+footer{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:var(--colorFondo);
+}
+footer main{
+    height: 50px;
+    width: 80%;
+    display: flex;
+    gap: 150px;
+    padding: 5px;
+}
+.izquierda{
+    flex: 1;
+}
+
+.derecha{
+    flex: 1;
+}
+.izquierda h3{
+    font-size: 13px;
+}
+.izquierda p{
+    font-size: 10px;
+}
+.derecha h3{
+    font-size: 13px;
+    text-align: center;
+}
+.derecha p{
+    font-size: 10px;
+    text-align: center;
+}

@@ -1,0 +1,254 @@
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #8FB3E2;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+@keyframes entradaSuave {
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --colorTextoSeleccionado: #355CC0;
+    --fondoSeleccionado: #EBF0FF;
+    --colorFondo: white;
+    --colorTituloTexto: #053D4E;
+    --colorTexto: #32363B;
+    --colorIcono: #32363B;
+    --colorIconoMenu: #707780;
+    --colorMenu: #707780;
+
+    --fondoHover: #F7F9FA;
+
+    --colorBorde: #E6E9ED;
+
+    --sombraGeneral: 0px 4px 10px rgba(0,0,0,0.3);
+
+    --colorBoton: #211f99;
+    --colorBotonHover: rgb(211, 211, 223);
+}
+
+.barraSuperior{
+    width: 100%;
+    height: 70px;
+    padding: 0 25px;
+    background-color: var(--colorFondo);
+    border-bottom: 1px solid var(--colorBorde);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.botonMenu{
+    width: 28px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.botonMenu span{
+    width: 100%;
+    height: 3px;
+    background-color: var(--colorMenu);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.marcaLogo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.imagenLogo{
+    width: 50px;
+}
+
+.texto{
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--colorTexto);
+}
+
+.iconoUsuario{
+    width: 35px;
+}
+
+.menuLateral{
+    position: fixed;
+    top: 70px; /* debajo de la barra */
+    left: -500px; /* oculto fuera de pantalla */
+    width: 350px;
+    height: 100%;
+    background-color: var(--colorFondo);
+    padding: 25px;
+    transition: left 0.3s ease; /* animación */
+}
+.active{
+    left: 0;
+}
+.menuLateral img{
+    height: 40px;
+}
+.menuLateral a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--colorTexto);
+    width: 350px;
+    gap: 15px;
+    transition: background-color 0.3s ease;
+}
+.menuLateral a:hover{
+    background-color: var(--colorBotonHover);
+    border-radius: 5px;
+}
+.menuLateral li{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.menuLateral nav{
+    padding: 5px;
+}
+/*===================================================================*/
+.textoPrincipal{
+    margin-top: 70px;
+    padding: 20px;
+    text-align: center;
+}
+.index{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.indexContenedor{
+    display: flex;
+    
+    align-items: center;
+    flex-direction: column;
+    height: 220px;
+    width: 50%;
+    background-color: var(--colorFondo);
+    border-radius: 15px;
+    box-shadow: var(--sombraGeneral);
+}
+.indexContenedor h2{
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+}
+.indexContenedor button{
+    height: 40px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--colorBoton);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
+}
+.indexContenedor button:hover{
+    background-color: rgb(89, 89, 210);
+    transform: scale(1.05);
+}
+.informacion{
+    margin-top: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.informacion article{
+    padding: 20px;
+    width: 400px;
+    background-color: var(--colorFondo);
+    border-radius: 10px;
+    box-shadow: var(--sombraGeneral);
+}
+.informacion h3{
+    color: var(--colorTextoSeleccionado);
+    padding: 10px;
+}
+/*======================== Footer ===========================*/
+footer{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:var(--colorFondo);
+}
+footer main{
+    height: 50px;
+    width: 80%;
+    display: flex;
+    gap: 150px;
+    padding: 5px;
+}
+.izquierda{
+    flex: 1;
+}
+
+.derecha{
+    flex: 1;
+}
+.izquierda h3{
+    font-size: 13px;
+}
+.izquierda p{
+    font-size: 10px;
+}
+.derecha h3{
+    font-size: 13px;
+    text-align: center;
+}
+.derecha p{
+    font-size: 10px;
+    text-align: center;
+}
+@media (min-width: 1080px){
+    .indexContenedor{
+        height: 180px;
+        width: 500px;
+    }
+}
