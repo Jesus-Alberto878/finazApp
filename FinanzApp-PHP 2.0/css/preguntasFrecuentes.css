@@ -1,0 +1,254 @@
+
+html,
+body{
+    overflow-x: hidden;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #8FB3E2;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/*======================== VARIABLES ===========================*/
+
+:root{
+    --colorTextoSeleccionado: #355CC0;
+    --fondoSeleccionado: #EBF0FF;
+    --colorFondo: white;
+    --colorTituloTexto: #053D4E;
+    --colorTexto: #32363B;
+    --colorIcono: #32363B;
+    --colorIconoMenu: #707780;
+    --colorMenu: #707780;
+
+    --fondoHover: #F7F9FA;
+
+    --colorBorde: #E6E9ED;
+
+    --sombraGeneral: 0px 4px 10px rgba(0,0,0,0.3);
+
+    --colorBoton: #211f99;
+    --colorBotonHover: rgb(211, 211, 223);
+}
+
+/*======================== ANIMACIÓN ===========================*/
+
+@keyframes entradaSuave{
+
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*======================== MAIN ===========================*/
+
+main{
+    width: 100%;
+
+    margin-top: 70px;
+
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+
+    animation: entradaSuave 0.8s ease;
+}
+
+.tituloPrincipal{
+    text-align: center;
+
+    font-size: 42px;
+
+    color: #1e3a8a;
+
+    margin-bottom: 10px;
+}
+
+/*======================== TARJETAS FAQ ===========================*/
+
+.faqItem{
+    background-color: var(--colorFondo);
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+
+    transition: 0.3s ease;
+}
+
+.faqItem:hover{
+    transform: translateY(-4px);
+}
+
+.faqItem h2{
+    color: #355CC0;
+
+    font-size: 24px;
+
+    margin-bottom: 15px;
+}
+
+.faqItem p{
+    color: #444;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    text-align: justify;
+}
+/*======================== FOOTER ===========================*/
+
+footer{
+    margin-top: auto;
+
+    min-height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--colorFondo);
+
+    padding: 20px;
+}
+
+footer main{
+    width: 80%;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+}
+
+.izquierda,
+.derecha{
+    flex: 1;
+}
+
+.izquierda h3,
+.derecha h3{
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.izquierda p,
+.derecha p{
+    font-size: 12px;
+}
+
+.derecha{
+    text-align: center;
+}
+
+
+
+/*======================== TABLET ===========================*/
+
+@media (max-width: 768px){
+
+    main{
+        padding: 25px 20px;
+    }
+
+    .tituloPrincipal{
+        font-size: 32px;
+    }
+
+    .faqItem{
+        padding: 20px;
+    }
+
+    .faqItem h2{
+        font-size: 21px;
+    }
+
+    .mainFooder{
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 25px;
+    }
+}
+
+/*======================== CELULARES ===========================*/
+
+@media (max-width: 480px){
+
+    .menuLateral{
+        width: 270px;
+    }
+
+    .tituloPrincipal{
+        font-size: 28px;
+    }
+
+    .faqItem h2{
+        font-size: 20px;
+    }
+
+    .faqItem p{
+        font-size: 15px;
+    }
+
+    main{
+        padding: 20px 15px;
+    }
+}
+
+/*======================== PANTALLAS GRANDES ===========================*/
+
+@media (min-width: 1400px){
+
+    .barraSuperior{
+        padding: 0 60px;
+    }
+
+    .texto{
+        font-size: 30px;
+    }
+
+    .imagenLogo{
+        width: 60px;
+    }
+
+    .iconoUsuario{
+        width: 40px;
+    }
+
+    .tituloPrincipal{
+        font-size: 56px;
+    }
+
+    main{
+        padding: 60px 80px;
+    }
+
+    .faqItem{
+        padding: 35px;
+    }
+
+    .faqItem h2{
+        font-size: 30px;
+    }
+
+    .faqItem p{
+        font-size: 18px;
+    }
+}

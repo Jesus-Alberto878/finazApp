@@ -1,0 +1,518 @@
+/*======================== RESET ===========================*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*======================== VARIABLES ===========================*/
+
+:root{
+
+    --colorTextoSeleccionado: #355CC0;
+    --fondoSeleccionado: #EBF0FF;
+
+    --colorFondo: white;
+
+    --colorTituloTexto: #053D4E;
+    --colorTexto: #32363B;
+
+    --colorIcono: #32363B;
+    --colorIconoMenu: #707780;
+    --colorMenu: #707780;
+
+    --fondoHover: #F7F9FA;
+
+    --colorBorde: #E6E9ED;
+
+    --sombraGeneral: 0px 4px 10px rgba(0,0,0,0.3);
+
+    --colorBoton: #211f99;
+    --colorBotonHover: rgb(211,211,223);
+
+}
+
+/*======================== GENERAL ===========================*/
+
+html,
+body{
+
+    overflow-x: hidden;
+
+    scroll-behavior: smooth;
+
+}
+
+body{
+
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: #8FB3E2;
+
+    font-family: 'Inter', sans-serif;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+/*======================== CONTENEDOR PRINCIPAL ===========================*/
+
+main{
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 40px;
+
+}
+
+/*======================== ANIMACIONES ===========================*/
+
+@keyframes entradaSuave{
+
+    0%{
+
+        opacity: 0;
+        transform: translateY(20px);
+
+    }
+
+    100%{
+
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+}
+
+/*======================== FORMULARIO LOGIN ===========================*/
+
+.formularioLogin{
+
+    width: 100%;
+
+    min-height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 120px 20px 20px;
+
+    animation: entradaSuave 0.8s ease;
+
+}
+
+/*======================== TARJETA LOGIN ===========================*/
+
+.tarjetaLogin{
+
+    width: 100%;
+    max-width: 450px;
+
+    background: rgba(255,255,255,0.95);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+
+    border: 1px solid rgba(255,255,255,0.4);
+
+}
+
+/*======================== TITULOS ===========================*/
+
+.tarjetaLogin h2{
+
+    font-size: 34px;
+
+    color: var(--colorTituloTexto);
+
+    margin-bottom: 10px;
+
+}
+
+.tarjetaLogin p{
+
+    color: #5f6b75;
+
+    margin-bottom: 30px;
+
+    line-height: 1.5;
+
+}
+
+/*======================== FORMULARIO ===========================*/
+
+.formularioDatos{
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+
+}
+
+.formularioDatos label{
+
+    font-size: 15px;
+    font-weight: 600;
+
+    color: var(--colorTexto);
+
+}
+
+/*======================== INPUTS ===========================*/
+
+.formularioDatos input{
+
+    width: 100%;
+
+    padding: 15px 18px;
+
+    border-radius: 14px;
+
+    border: 2px solid transparent;
+
+    background-color: #f4f7fb;
+
+    outline: none;
+
+    font-size: 15px;
+
+    color: var(--colorTexto);
+
+    transition: 0.3s ease;
+
+}
+
+.formularioDatos input::placeholder{
+
+    color: #97a0aa;
+
+}
+
+.formularioDatos input:focus{
+
+    border-color: var(--colorTextoSeleccionado);
+
+    background-color: white;
+
+    box-shadow: 0 0 0 4px rgba(53,92,192,0.15);
+
+}
+
+/*======================== BOTÓN ===========================*/
+
+.botonIngresar{
+
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background-color: var(--colorBoton);
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+}
+
+.botonIngresar:hover{
+
+    background-color: #3734c7;
+
+    transform: translateY(-2px);
+
+}
+
+/*======================== TÉRMINOS Y CONDICIONES ===========================*/
+/*======================== MODAL TÉRMINOS ===========================*/
+
+.terminosCondiciones{
+
+    width: 100%;
+    height: 100vh;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0,0,0,0.5);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    z-index: 5000;
+
+}
+
+/* CONTENEDOR */
+
+.contenedorTerminos{
+
+    width: 100%;
+    max-width: 900px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background-color: white;
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+
+    animation: entradaSuave 0.5s ease;
+
+}
+
+/* BOTÓN CERRAR */
+
+.cerrarModal{
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: #211f99;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    transition: 0.3s ease;
+
+}
+
+.cerrarModal:hover{
+
+    background-color: #3734c7;
+
+}
+/*======================== RESPONSIVE TABLET ===========================*/
+
+@media (max-width: 768px){
+
+    .tarjetaLogin{
+
+        padding: 30px 25px;
+
+        border-radius: 20px;
+
+    }
+
+    .tarjetaLogin h2{
+
+        font-size: 28px;
+
+    }
+
+    .contenedorTerminos{
+
+        padding: 35px 25px;
+
+    }
+
+    .tituloTerminos{
+
+        font-size: 32px;
+
+    }
+
+    .bloqueTerminos{
+
+        padding: 20px;
+
+    }
+
+}
+
+/*======================== CELULARES ===========================*/
+
+@media (max-width: 480px){
+
+    .formularioLogin{
+
+        padding: 100px 15px 20px;
+
+    }
+
+    .tarjetaLogin{
+
+        padding: 25px 20px;
+
+        border-radius: 18px;
+
+    }
+
+    .tarjetaLogin h2{
+
+        font-size: 24px;
+
+    }
+
+    .tarjetaLogin p{
+
+        font-size: 14px;
+
+    }
+
+    .formularioDatos input{
+
+        padding: 14px;
+
+        font-size: 14px;
+
+    }
+
+    .botonIngresar{
+
+        padding: 14px;
+
+        font-size: 15px;
+
+    }
+
+    .terminosCondiciones{
+
+        padding: 0 15px 40px;
+
+    }
+
+    .contenedorTerminos{
+
+        padding: 25px 18px;
+
+        border-radius: 20px;
+
+    }
+
+    .tituloTerminos{
+
+        font-size: 26px;
+
+    }
+
+    .textoTerminos{
+
+        font-size: 14px;
+
+    }
+
+    .bloqueTerminos h3{
+
+        font-size: 19px;
+
+    }
+
+    .bloqueTerminos p{
+
+        font-size: 14px;
+
+    }
+
+}
+
+/*======================== PANTALLAS GRANDES ===========================*/
+
+@media (min-width: 1400px){
+
+    .tarjetaLogin{
+
+        max-width: 520px;
+
+        padding: 50px;
+
+    }
+
+    .tarjetaLogin h2{
+
+        font-size: 42px;
+
+    }
+
+    .tarjetaLogin p{
+
+        font-size: 18px;
+
+    }
+
+    .formularioDatos label{
+
+        font-size: 17px;
+
+    }
+
+    .formularioDatos input{
+
+        font-size: 17px;
+
+        padding: 18px 20px;
+
+    }
+
+    .botonIngresar{
+
+        font-size: 18px;
+
+        padding: 18px;
+
+    }
+
+    .tituloTerminos{
+
+        font-size: 48px;
+
+    }
+
+    .bloqueTerminos h3{
+
+        font-size: 26px;
+
+    }
+
+    .bloqueTerminos p{
+
+        font-size: 17px;
+
+    }
+
+}

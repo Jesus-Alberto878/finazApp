@@ -1,0 +1,112 @@
+/*======================== FOOTER ===========================*/
+
+.footer{
+
+    width: 100%;
+
+    background-color: white;
+
+    margin-top: auto;
+
+    border-top: 1px solid #E6E9ED;
+
+    padding: 25px 20px;
+
+}
+
+/* CONTENEDOR */
+
+.footerContenedor{
+
+    width: 100%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+
+}
+
+/* SECCIONES */
+
+.footerIzquierda,
+.footerDerecha{
+
+    flex: 1;
+    min-width: 250px;
+
+}
+
+/* TÍTULOS */
+
+.footer h3{
+
+    color: #053D4E;
+
+    margin-bottom: 12px;
+
+    font-size: 20px;
+
+}
+
+/* TEXTOS */
+
+.footer p{
+
+    color: #32363B;
+
+    line-height: 1.6;
+
+    margin-bottom: 6px;
+
+}
+
+/*======================== RESPONSIVE TABLET ===========================*/
+
+@media (max-width: 768px){
+
+    .footerContenedor{
+
+        flex-direction: column;
+
+        gap: 20px;
+
+    }
+
+    .footer h3{
+
+        font-size: 18px;
+
+    }
+
+}
+
+/*======================== RESPONSIVE CELULAR ===========================*/
+
+@media (max-width: 480px){
+
+    .footer{
+
+        padding: 20px 15px;
+
+    }
+
+    .footer h3{
+
+        font-size: 17px;
+
+    }
+
+    .footer p{
+
+        font-size: 14px;
+
+    }
+
+}

@@ -1,0 +1,315 @@
+
+
+:root{
+    --colorTextoSeleccionado: #355CC0;
+    --fondoSeleccionado: #EBF0FF;
+    --colorFondo: white;
+    --colorTituloTexto: #053D4E;
+    --colorTexto: #32363B;
+    --colorIcono: #32363B;
+    --colorIconoMenu: #707780;
+    --colorMenu: #707780;
+
+    --fondoHover: #F7F9FA;
+
+    --colorBorde: #E6E9ED;
+
+    --sombraGeneral: 0px 4px 10px rgba(0,0,0,0.3);
+
+    --colorBoton: #211f99;
+    --colorBotonHover: rgb(211, 211, 223);
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #8FB3E2;
+    font-family: 'Inter', sans-serif;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 70px;
+}
+
+/*======================== ANIMACIÓN ===========================*/
+
+@keyframes entradaSuave{
+
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*======================== TÍTULO ===========================*/
+
+.tituloAhorro{
+    text-align: center;
+
+    font-size: 42px;
+    color: #1e3a8a;
+    font-weight: 700;
+
+    padding: 30px 20px 10px;
+
+    animation: entradaSuave 0.8s ease;
+}
+
+/*======================== CONTENIDO ===========================*/
+
+.contenidoAhorro{
+    width: 100%;
+
+    padding: 40px;
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+
+    gap: 25px;
+}
+
+.tarjetaAhorro{
+    background: #ffffff;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+    animation: entradaSuave 0.8s ease;
+}
+
+.tarjetaAhorro:hover{
+    transform: translateY(-8px);
+
+    box-shadow: 0 10px 20px rgba(0,0,0,.15);
+}
+
+.tarjetaAhorro h2{
+    margin-bottom: 15px;
+
+    color: #355CC0;
+
+    font-size: 26px;
+}
+
+.tarjetaAhorro h3{
+    margin-top: 20px;
+    margin-bottom: 12px;
+
+    color: #1e3a8a;
+
+    font-size: 20px;
+}
+
+.tarjetaAhorro p{
+    color: #444;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    text-align: justify;
+}
+
+.tarjetaAhorro ul{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.tarjetaAhorro ul li{
+    margin-bottom: 10px;
+
+    color: #333;
+
+    font-size: 15px;
+}
+
+/*======================== FOOTER ===========================*/
+
+footer{
+    margin-top: auto;
+
+    min-height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--colorFondo);
+
+    padding: 20px;
+}
+
+footer main{
+    width: 80%;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 150px;
+}
+
+.izquierda,
+.derecha{
+    flex: 1;
+}
+
+.izquierda h3,
+.derecha h3{
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+.izquierda p,
+.derecha p{
+    font-size: 12px;
+}
+
+.derecha{
+    text-align: center;
+}
+
+/*======================== RESPONSIVE TABLET ===========================*/
+
+@media (max-width: 768px){
+
+    .barraSuperior{
+        padding: 0 15px;
+    }
+
+    .texto{
+        font-size: 18px;
+    }
+
+    .tituloAhorro{
+        font-size: 32px;
+    }
+
+    .contenidoAhorro{
+        padding: 20px;
+    }
+
+    .tarjetaAhorro{
+        padding: 20px;
+    }
+
+    .tarjetaAhorro h2{
+        font-size: 22px;
+    }
+
+    footer main{
+        flex-direction: column;
+
+        gap: 20px;
+
+        align-items: center;
+
+        text-align: center;
+    }
+}
+
+/*======================== PANTALLAS GRANDES ===========================*/
+
+@media (min-width: 1400px){
+
+    .barraSuperior{
+        padding: 0 60px;
+    }
+
+    .texto{
+        font-size: 30px;
+    }
+
+    .imagenLogo{
+        width: 60px;
+    }
+
+    .iconoUsuario{
+        width: 40px;
+    }
+
+    .menuLateral{
+        width: 320px;
+        padding: 35px;
+    }
+
+    .menuLateral a{
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    .menuLateral img{
+        height: 40px;
+    }
+
+    .tituloAhorro{
+        font-size: 55px;
+        padding-top: 50px;
+    }
+
+    .contenidoAhorro{
+        max-width: 1800px;
+
+        margin: auto;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 40px;
+
+        padding: 60px;
+    }
+
+    .tarjetaAhorro{
+        padding: 40px;
+
+        border-radius: 25px;
+    }
+
+    .tarjetaAhorro h2{
+        font-size: 34px;
+    }
+
+    .tarjetaAhorro h3{
+        font-size: 25px;
+    }
+
+    .tarjetaAhorro p{
+        font-size: 18px;
+        line-height: 2;
+    }
+
+    .tarjetaAhorro ul li{
+        font-size: 17px;
+    }
+
+    footer{
+        padding: 35px;
+    }
+
+    footer main{
+        width: 90%;
+    }
+
+    .izquierda h3,
+    .derecha h3{
+        font-size: 18px;
+    }
+
+    .izquierda p,
+    .derecha p{
+        font-size: 15px;
+    }
+}

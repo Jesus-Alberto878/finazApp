@@ -1,0 +1,477 @@
+/*======================== RESET ===========================*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*======================== VARIABLES ===========================*/
+
+:root{
+
+    --colorTextoSeleccionado: #355CC0;
+    --fondoSeleccionado: #EBF0FF;
+
+    --colorFondo: #FFFFFF;
+
+    --colorTituloTexto: #053D4E;
+    --colorTexto: #32363B;
+
+    --colorIcono: #32363B;
+    --colorIconoMenu: #707780;
+    --colorMenu: #707780;
+
+    --fondoHover: #F7F9FA;
+
+    --colorBorde: #E6E9ED;
+
+    --sombraGeneral: 0px 4px 10px rgba(0,0,0,0.25);
+
+    --colorBoton: #211f99;
+    --colorBotonHover: rgb(211,211,223);
+
+}
+
+/*======================== GENERAL ===========================*/
+
+html,
+body{
+
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+}
+
+body{
+
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: #8FB3E2;
+
+    font-family: 'Inter', sans-serif;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 70px;
+
+}
+
+/*======================== ANIMACIÓN ===========================*/
+
+@keyframes entradaSuave{
+
+    from{
+
+        opacity: 0;
+        transform: translateY(20px);
+
+    }
+
+    to{
+
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+}
+
+/*======================== BARRA SUPERIOR ===========================*/
+
+.barraSuperior{
+
+    width: 100%;
+    height: 70px;
+
+    background-color: var(--colorFondo);
+
+    border-bottom: 1px solid var(--colorBorde);
+
+    padding: 0 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+
+}
+
+/*======================== BOTÓN HAMBURGUESA ===========================*/
+
+.botonMenu{
+
+    width: 35px;
+    height: 28px;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    z-index: 2000;
+
+}
+
+.botonMenu span{
+
+    width: 100%;
+    height: 4px;
+
+    background-color: var(--colorTexto);
+
+    border-radius: 10px;
+
+    transition: all 0.3s ease;
+
+}
+
+/*======================== LOGO ===========================*/
+
+.marcaLogo{
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    text-decoration: none;
+
+}
+
+.imagenLogo{
+
+    width: 50px;
+    object-fit: cover;
+
+}
+
+.texto{
+
+    font-size: 24px;
+    font-weight: bold;
+
+    color: var(--colorTexto);
+
+}
+
+/*======================== USUARIO ===========================*/
+
+.navegacionUsuario{
+
+    display: flex;
+    align-items: center;
+
+}
+
+.iconoUsuario{
+
+    width: 35px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+
+}
+
+.iconoUsuario:hover{
+
+    transform: scale(1.1);
+
+}
+
+/*======================== MENÚ LATERAL ===========================*/
+
+.menuLateral{
+
+    position: fixed;
+
+    top: 70px;
+    left: -270px;
+
+    width: 260px;
+    height: calc(100vh - 70px);
+
+    background-color: var(--colorFondo);
+
+    padding: 20px 15px;
+
+    transition: left 0.3s ease;
+
+    z-index: 999;
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 4px 0px 10px rgba(0,0,0,0.08);
+
+}
+
+/*======================== MENÚ ACTIVO ===========================*/
+
+.menuLateral.active{
+
+    left: 0;
+
+}
+
+/*======================== SCROLL ===========================*/
+
+.menuLateral::-webkit-scrollbar{
+
+    width: 8px;
+
+}
+
+.menuLateral::-webkit-scrollbar-thumb{
+
+    background-color: #c5c5c5;
+
+    border-radius: 10px;
+
+}
+
+.menuLateral::-webkit-scrollbar-track{
+
+    background: transparent;
+
+}
+
+/*======================== NAVEGACIÓN ===========================*/
+
+.menuLateral nav{
+
+    width: 100%;
+
+}
+
+.menuLateral ul{
+
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+.menuLateral li{
+
+    width: 100%;
+
+}
+
+/*======================== ENLACES ===========================*/
+
+.menuLateral a{
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    width: 100%;
+
+    text-decoration: none;
+
+    color: var(--colorTexto);
+
+    padding: 12px 15px;
+
+    border-radius: 12px;
+
+    transition: all 0.3s ease;
+
+}
+
+.menuLateral a:hover{
+
+    background-color: var(--colorBotonHover);
+
+    transform: translateX(5px);
+
+}
+
+/*======================== ENLACE ACTIVO ===========================*/
+
+.menuLateral a.activo{
+
+    background-color: var(--colorBoton);
+
+    color: white;
+
+}
+
+/*======================== ICONOS MENÚ ===========================*/
+
+.menuLateral img{
+
+    width: 28px;
+    height: 28px;
+
+    object-fit: contain;
+
+}
+
+/*======================== RESPONSIVE TABLET ===========================*/
+
+@media (max-width: 768px){
+
+    .barraSuperior{
+
+        padding: 0 15px;
+
+    }
+
+    .texto{
+
+        font-size: 20px;
+
+    }
+
+    .menuLateral{
+
+        width: 230px;
+        left: -240px;
+
+        padding: 15px 10px;
+
+    }
+
+    .menuLateral.active{
+
+        left: 0;
+
+    }
+
+    .menuLateral a{
+
+        padding: 10px;
+
+        font-size: 15px;
+
+    }
+
+    .menuLateral img{
+
+        width: 24px;
+        height: 24px;
+
+    }
+
+}
+
+/*======================== RESPONSIVE CELULAR ===========================*/
+
+@media (max-width: 480px){
+
+    .barraSuperior{
+
+        height: 65px;
+
+        padding: 0 12px;
+
+    }
+
+    body{
+
+        padding-top: 65px;
+
+    }
+
+    .texto{
+
+        display: none;
+
+    }
+
+    .imagenLogo{
+
+        width: 42px;
+
+    }
+
+    .iconoUsuario{
+
+        width: 30px;
+
+    }
+
+    .menuLateral{
+
+        width: 210px;
+        left: -220px;
+
+        top: 65px;
+
+        height: calc(100vh - 65px);
+
+    }
+
+    .menuLateral a{
+
+        gap: 10px;
+
+        font-size: 14px;
+
+    }
+
+    .menuLateral img{
+
+        width: 22px;
+        height: 22px;
+
+    }
+
+}
+
+/*======================== RESPONSIVE PANTALLAS GRANDES ===========================*/
+
+@media (min-width: 1400px){
+
+    .menuLateral{
+
+        width: 300px;
+
+    }
+
+    .menuLateral a{
+
+        font-size: 18px;
+
+        padding: 15px;
+
+    }
+
+    .menuLateral img{
+
+        width: 32px;
+        height: 32px;
+
+    }
+
+    .texto{
+
+        font-size: 28px;
+
+    }
+
+}

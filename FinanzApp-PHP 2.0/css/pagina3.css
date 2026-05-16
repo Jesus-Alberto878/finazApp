@@ -1,0 +1,218 @@
+
+:root{
+    --colorTextoSeleccionado: #355CC0;
+    --fondoSeleccionado: #EBF0FF;
+    --colorFondo: white;
+    --colorTituloTexto: #053D4E;
+    --colorTexto: #32363B;
+    --colorIcono: #32363B;
+    --colorIconoMenu: #707780;
+    --colorMenu: #707780;
+
+    --fondoHover: #F7F9FA;
+
+    --colorBorde: #E6E9ED;
+
+    --sombraGeneral: 0px 4px 10px rgba(0,0,0,0.3);
+
+    --colorBoton: #211f99;
+    --colorBotonHover: rgb(97,89,221);
+}
+
+html,
+body{
+    overflow-x: hidden;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #8FB3E2;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes entradaSuave{
+
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+/*======================== MAIN ===========================*/
+
+main{
+    width: 100%;
+    margin-top: 70px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*======================== FORMULARIO ===========================*/
+
+.formularioGastos{
+    width: 100%;
+    max-width: 400px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: var(--sombraGeneral);
+}
+
+.tituloFormulario{
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--colorTituloTexto);
+}
+
+.formularioGastos select,
+.formularioGastos input{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--colorBorde);
+    outline: none;
+}
+
+.formularioGastos button{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--colorBoton);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.formularioGastos button:hover{
+    background-color: var(--colorBotonHover);
+}
+
+/*======================== REGISTRO ===========================*/
+
+.contenedorRegistroGastos{
+    width: 100%;
+    max-width: 700px;
+    margin-top: 25px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: var(--sombraGeneral);
+}
+
+.contenedorRegistroGastos h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#dineroRestante,
+#totalGastado{
+    margin-bottom: 10px;
+}
+
+#barraProgreso{
+    width: 100%;
+    height: 20px;
+    margin: 15px 0;
+}
+
+.registroGastos{
+    overflow-x: auto;
+}
+
+/*======================== TABLA ===========================*/
+
+.tablaGastos{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tablaGastos th,
+.tablaGastos td{
+    padding: 12px;
+    border-bottom: 1px solid var(--colorBorde);
+    text-align: center;
+}
+
+/*======================== GRAFICA ===========================*/
+
+.contenedorGrafica{
+    width: 100%;
+    max-width: 500px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: var(--sombraGeneral);
+}
+
+/*======================== FOOTER ===========================*/
+
+footer{
+    margin-top: auto;
+
+    min-height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--colorFondo);
+
+    padding: 20px;
+}
+
+footer main{
+    width: 80%;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+}
+
+.izquierda,
+.derecha{
+    flex: 1;
+}
+
+.izquierda h3,
+.derecha h3{
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.izquierda p,
+.derecha p{
+    font-size: 12px;
+}
+
+.derecha{
+    text-align: center;
+}
+
+/*======================== RESPONSIVE ===========================*/
+
+@media(max-width:768px){
+
+    .menuLateral{
+        width: 250px;
+    }
+
+    footer main{
+        flex-direction: column;
+        text-align: center;
+    }
+
+}

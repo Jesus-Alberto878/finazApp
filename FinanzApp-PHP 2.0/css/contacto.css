@@ -1,0 +1,130 @@
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #8FB3E2;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Evita desplazamiento horizontal */
+html, body{
+    overflow-x: hidden;
+}
+
+/* ================= ANIMACIĆ“N ================= */
+
+@keyframes entradaSuave{
+
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= VARIABLES ================= */
+
+:root{
+
+    --colorTextoSeleccionado: #355CC0;
+    --fondoSeleccionado: #EBF0FF;
+
+    --colorFondo: white;
+    --colorTituloTexto: #053D4E;
+    --colorTexto: #32363B;
+
+    --colorIcono: #32363B;
+    --colorIconoMenu: #707780;
+    --colorMenu: #707780;
+
+    --fondoHover: #F7F9FA;
+
+    --colorBorde: #E6E9ED;
+
+    --sombraGeneral: 0px 4px 10px rgba(0,0,0,0.3);
+
+    --colorBoton: #211f99;
+    --colorBotonHover: rgb(97, 89, 221);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (min-width: 768px){
+
+    .contenidoEquipo{
+        margin-left: 64px;
+    }
+}
+
+/* ================= CONTENIDO ================= */
+
+.contenidoEquipo{
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 64px;
+    padding: 20px;
+}
+
+/* CONTENEDOR */
+
+.contenedorEquipo{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* TARJETAS */
+
+.tarjetaEquipo{
+    width: 350px;
+    padding: 15px;
+    background-color: var(--fondoHover);
+    border-radius: 8px;
+    box-shadow: var(--sombraGeneral);
+    transition: transform 0.3s ease;
+    animation: entradaSuave 0.5s ease;
+}
+
+.tarjetaEquipo:hover{
+    transform: scale(1.05);
+}
+
+/* TĆ¨TULOS */
+
+.tarjetaEquipo h3{
+    color: var(--colorTituloTexto);
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+/* TEXTO */
+
+.tarjetaEquipo p{
+    color: var(--colorTexto);
+    font-size: 14px;
+    word-break: break-word;
+}
+
+/* RESPONSIVE EXTRA */
+
+@media (max-width: 500px){
+
+    .contenedorEquipo{
+        width: 100%;
+    }
+
+    .tarjetaEquipo{
+        width: 100%;
+    }
+}

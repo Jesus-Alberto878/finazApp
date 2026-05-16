@@ -1,0 +1,213 @@
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #8FB3E2;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+@keyframes entradaSuave {
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+:root{
+    --colorTextoSeleccionado: #355CC0;
+    --fondoSeleccionado: #EBF0FF;
+    --colorFondo: white;
+    --colorTituloTexto: #053D4E;
+    --colorTexto: #32363B;
+    --colorIcono: #32363B;
+    --colorIconoMenu: #707780;
+    --colorMenu: #707780;
+
+    --fondoHover: #F7F9FA;
+
+    --colorBorde: #E6E9ED;
+
+    --sombraGeneral: 0px 4px 10px rgba(0,0,0,0.3);
+
+    --colorBoton: #211f99;
+    --colorBotonHover: rgb(211, 211, 223);
+}
+/*===================================================================*/
+.registrarse{
+    margin-top: 70px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registrarseContenedor{
+    background: #fff;
+    width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.registrarseContenedor h3{
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.registrarseContenedor p{
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.registrarseContenedor form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.registrarseContenedor form label{
+    font-size: 14px;
+    color: #333;
+}
+
+.registrarseContenedor form input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+.registrarseContenedor form input:focus{
+    border-color: #211f99;
+}
+
+#btnRegistrar{
+    
+    margin-top: 15px;
+    padding: 10px;
+    background: #211f99;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btnRegistrar:hover{
+    background: rgb(97,89,221);
+}
+/*======================== Footer ===========================*/
+footer{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:var(--colorFondo);
+}
+footer main{
+    height: 50px;
+    width: 80%;
+    display: flex;
+    gap: 150px;
+    padding: 5px;
+}
+.izquierda{
+    flex: 1;
+}
+
+.derecha{
+    flex: 1;
+}
+.izquierda h3{
+    font-size: 13px;
+}
+.izquierda p{
+    font-size: 10px;
+}
+.derecha h3{
+    font-size: 13px;
+    text-align: center;
+}
+.derecha p{
+    font-size: 10px;
+    text-align: center;
+}
+/*======================== PANTALLAS GRANDES ===========================*/
+
+@media (min-width: 1400px){
+
+    .registrarseContenedor{
+        width: 450px;
+        padding: 35px;
+    }
+
+    .registrarseContenedor h3{
+        font-size: 32px;
+    }
+
+    .registrarseContenedor p{
+        font-size: 15px;
+    }
+
+    .registrarseContenedor form label{
+        font-size: 15px;
+    }
+
+    .registrarseContenedor form input{
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    #btnRegistrar{
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    /* menú más cómodo en pantallas grandes */
+    .menuLateral{
+        width: 380px;
+        left: -380px;
+    }
+
+    .menuLateral a{
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    .menuLateral img{
+        height: 45px;
+    }
+
+    /* barra superior más aireada */
+    .barraSuperior{
+        padding: 0 50px;
+    }
+
+    .texto{
+        font-size: 28px;
+    }
+
+    .imagenLogo{
+        width: 60px;
+    }
+
+    .iconoUsuario{
+        width: 40px;
+    }
+}
